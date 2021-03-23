@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+	<head>
+		<title>Form Validation | Custom Validation | Example 2 (Pasword Validation)</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<form name="form">
+			<div>
+				<label>Password</label>
+				<input type="password" name="password" ng-model="password" required />
+			</div>
+			
+			<div>
+				<label>Confirm Password</label>
+				<input type="password" name="confirmPassword" ng-model="confirmPassword" required compare-to="password" />
+				<span style="color: red" ng-show="form.confirmPassword.$error.compareTo">
+					Passwords don't match.
+				</span>
+			</div>
+			<input type="submit" value="Update">
+		</form>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+	<script src="script/myScript.js"></script>
+</html>
+<!-- https://embed.plnkr.co/XWJTGd/ -->

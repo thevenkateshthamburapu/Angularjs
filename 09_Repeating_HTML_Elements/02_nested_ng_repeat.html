@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+	<head>
+		<title>Nested NG-REPEAT Example</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<ul ng-repeat="country in countries">
+			<li>{{country.name}}</li>
+			<ul ng-repeat="city in country.cities">
+				<li>{{city.name}}</li>
+			</ul>
+		</ul>
+		<br>
+
+		<strong><u>Index Values</u></strong>
+
+		<ul ng-repeat="country in countries">
+			<li>{{country.name}}</li>
+			<ul ng-repeat="city in country.cities">
+				<li>{{city.name}} [Index-{{$index}}]</li>
+			</ul>
+		</ul>
+		<br>
+
+		<!-- To get the index of the parent element
+		
+		    		Use $parent.$index or
+		    		Use ng-init="parentIndex = $index" -->
+
+		<strong><u>Parent Index Values (Use $parent.$index)</u></strong>
+		<ul ng-repeat="country in countries">
+			<li>{{country.name}} [Index-{{$index}}]</li>
+			<ul ng-repeat="city in country.cities">
+				<li>{{city.name}} [Parent Index:{{$parent.$index}} Child Index:{{$index}}]</li>
+			</ul>
+		</ul>
+		<br>
+
+		<strong><u>Parent Index Values (Use ng-init="parentIndex = $index")</u></strong>
+		<!-- ng-init should only be used for aliasing special properties of ng-repeat directive. -->
+		<ul ng-repeat="country in countries" ng-init="parentIndex=$index">
+			<li>{{country.name}} [Index-{{$index}}]</li>
+			<ul ng-repeat="city in country.cities">
+				<li>{{city.name}} [Parent Index:{{parentIndex}} Child Index:{{$index}}]</li>
+			</ul>
+		</ul>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+	<script>
+		var app=angular
+				.module('myApp', [])
+				.controller("myCtrl",function($scope){
+				var countries=[
+					{
+						name:"India",
+						cities:[
+							{name:"Hyderabad"},
+							{name:"Bangalore"},
+							{name:"Chennai"}
+							]
+					},
+					{
+						name:"UK",
+						cities:[
+							{name:"London"},
+							{name:"Birmingham"},
+							{name:"Manchester"}
+							]
+					},
+					{
+						name:"USA",
+						cities:[
+							{name:"Los Angeles"},
+							{name:"Chicago"},
+							{name:"Houston"}
+							]
+					}
+				];
+				$scope.countries=countries;
+});
+	</script>
+</html>

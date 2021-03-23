@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<title>Routing | Example 4 | The otherwise method</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<!--
+		The otherwise method
+		In the previous examples we have used the when method of the $routeProvider.
+		You can also use the otherwise method, which is the default route when none of the others get a match. -->
+		<p><a href="#/!">Main</a></p>
+		<a href="#!banana">Banana</a>
+		<a href="#!tomato">Tomato</a>
+		<p>Click on the links to change the content.</p>
+		<p>Use the "otherwise" method to define what to display when none of the links are clicked.</p>
+		<div ng-view></div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
+		<script src="script/myScript.js"></script>
+	</body>
+</html>

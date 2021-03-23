@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>AngularJS ng-cloak 07</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body ng-app>
+		<!-- The ngCloak directive is used to prevent the AngularJS html template from being briefly displayed by the browser in its raw (uncompiled) form while your application is loading. Use this directive to avoid the undesirable flicker effect caused by the html template display.
+		The directive can be applied to the <body> element, but the preferred usage is to apply multiple ngCloak directives to small portions of the page to permit progressive rendering of the browser view. -->
+			<div ng-cloak ng-init="items1=[1,15,19,2,40]">
+			<!-- <div ng-init="items1=[1,15,19,2,40]"> -->
+				<p>The third result is {{ items1[2] }}</p>
+			</div>
+			<p>More Information</p>
+			<a href="https://docs.angularjs.org/api/ng/directive/ngCloak">Ng-cloak Doc</a><br>
+			<a href="https://stackoverflow.com/questions/17091364/avoiding-expressions-being-shown-on-page-load">https://stackoverflow.com/questions/17091364/avoiding-expressions-being-shown-on-page-load</a>
+			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+	</body>
+</html>

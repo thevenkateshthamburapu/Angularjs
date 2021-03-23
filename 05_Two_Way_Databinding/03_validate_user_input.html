@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Validate User Input</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<!--
+		The ng-model directive can provide type validation for application data (number, e-mail, required) -->
+		<form name="myForm">
+			Email:<input type="email" name="myEmail" ng-model="text">
+			<span style="color: red" ng-show="myForm.myEmail.$error.email">Not a valid e-mail address</span>
+		</form>
+		<!--
+		In the example above, the span will be displayed only if the expression in the ng-show attribute returns true.
+		If the property in the ng-model attribute does not exist, AngularJS will create one for you -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+	</body>
+</html>
+<!-- 
+The ng-model directive adds/removes the following classes, according to the status of the form field:
+
+    ng-empty
+    ng-not-empty
+    ng-touched
+    ng-untouched
+    ng-valid
+    ng-invalid
+    ng-dirty
+    ng-pending
+    ng-pristine
+ -->

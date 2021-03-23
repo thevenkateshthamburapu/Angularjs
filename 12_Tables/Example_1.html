@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Tables | Example 1</title>
+	<link rel="icon" href="icon/angularjs.jpg">
+	<style>
+		table, th , td  {
+		  border: 1px solid grey;
+		  border-collapse: collapse;
+		  padding: 5px;
+		}
+		table tr:nth-child(odd) {
+		  background-color: #f1f1f1;
+		}
+		table tr:nth-child(even) {
+  		background-color: #ffffff;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>Sno</th>
+				<th>Name</th>
+				<th>Country</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr  ng-repeat="data in names">
+				<td>{{ $index + 1 }}</td>
+				<td>{{ data.Name }}</td>
+				<td>{{ data.Country}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+	<script>
+		var app=angular
+				.module('myApp', [])
+				.controller("myCtrl",function($scope,$http){
+					$http.get("https://www.w3schools.com/angular/customers.php")
+    				.then(function (response) {
+    					$scope.names = response.data.records;
+    				});
+			});
+	</script>
+</body>
+</html>

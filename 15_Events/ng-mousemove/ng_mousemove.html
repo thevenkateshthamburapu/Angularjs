@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>AngularJS Events | (ng_mousemove)</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<div>
+			<h1 ng-mousemove="count = count + 1">Mouse Over Me!</h1>
+			<h2>{{ count }}</h2>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+		<script>
+			var app = angular.module('myApp', [])
+							.controller('myCtrl', function($scope) {
+								$scope.count = 0;
+							});
+		</script>
+	</body>
+</html>

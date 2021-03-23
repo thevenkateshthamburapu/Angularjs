@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>HTML DOM | (ng-hide)</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<div>
+			<p ng-hide="false">I am visible.</p>
+			<p ng-hide="true">I am not visible.</p>
+		</div>
+		<div ng-init="hour=13">
+			<p ng-hide="hour > 12">I am visible(hour > 12).</p>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+	</body>
+</html>
+<!-- The ng-hide directive hides or hides an HTML element. -->
+<!--
+The ng-hide directive hides (or hides) an HTML element based on the value of ng-hide.
+You can use any expression that evaluates to true or false -->

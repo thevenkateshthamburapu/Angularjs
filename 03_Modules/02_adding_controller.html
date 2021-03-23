@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- we can use ng-controller whole page -->
+<!-- <html ng-app="myApp" ng-controller="myController"> -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Adding a Controller</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body ng-app="myApp">
+		<h1>Creating Controller</h1>
+		<!-- 
+			add a controller to your application, and refer to the controller with the ng-controller directive -->
+		<!-- we use ng-controller in particular section -->
+		<div ng-controller="myCtrl">
+			<p><u>With Controller</u></p>
+			Text:{{message}}
+		</div>
+		<div>
+			<p><u>Without Controller</u></p>
+			Text:{{message}}
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+		<script>
+			/*A module is created by using the AngularJS function angular.module*/
+			//create module
+						//	module_name,module_dependencies
+			var app = angular.module("myApp", []);
+			//create controller
+			var myController=function($scope){
+				$scope.message="Welcome to AngularJs";
+			}
+				//				controller_name,controller_function
+			app.controller("myCtrl",myController);
+			/*-------- or We can create like this ----------*/
+				//				controller_name,controller_function
+			/*app.controller("myCtrl",function($scope){
+				$scope.message="Welcome to AngularJs";
+			});*/
+		</script>
+	</body>
+</html>

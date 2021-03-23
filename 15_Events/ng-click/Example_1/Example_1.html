@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>AngularJS Events | (ng-click) Example 1</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<div>
+			<button ng-click="myFunction()">Click Me!</button>
+
+			<p>{{ count }}</p>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+		<script>
+			var app = angular.module('myApp', [])
+							.controller('myCtrl', function($scope) {
+								$scope.count = 0;
+							    $scope.myFunction = function() {
+							        $scope.count++;
+							    }
+							});
+		</script>
+	</body>
+</html>

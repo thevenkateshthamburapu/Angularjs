@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Two-Way Binding | ng-model</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<!-- 
+			The ng-model directive binds the value of HTML controls (input, select, textarea) to application data. -->
+		<!-- 
+		With the ng-model directive you can bind the value of an input field to a variable created in AngularJS. -->
+		<!-- 
+		The binding goes both ways. If the user changes the value inside the input field, the AngularJS property will also change its value -->
+		<div>
+			Text : <input type="text" ng-model="message">
+		</div>
+		<br>
+		<div>
+			{{message}}
+		</div>
+		<br>
+		<!-- if we not declare property(greetings) in scope. angularjs automatically create the property and attach the message --> 
+		<div>
+			Text : <input type="text" ng-model="greetings"> <!-- greeting not declared in scope -->
+		</div>
+		<br>
+		<div>
+			{{greetings}}
+		</div>
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+		<script>
+			var app=angular
+				.module('myApp', [])
+				.controller("myCtrl",function($scope){
+				$scope.message="Hello User";
+			});
+		</script>
+	</body>
+</html>
+<!-- 
+Data binding in AngularJS is the synchronization between the model and the view.
+
+When data in the model changes, the view reflects the change, and when data in the view changes, the model is updated as well. This happens immediately and automatically, which makes sure that the model and the view is updated at all times. -->

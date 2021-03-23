@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Services | $location</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<div>
+			<p>absUrl : <span ng-bind="absUrl" style="background-color: yellow"></span></p>
+			<p>url : <span ng-bind="url" style="background-color: yellow"></span></p>
+			<p>protocol : <span ng-bind="protocol" style="background-color: yellow"></span></p>
+			<p>host : <span ng-bind="host" style="background-color: yellow"></span></p>
+			<p>port : <span ng-bind="port" style="background-color: yellow"></span></p>
+			<p>path : <span ng-bind="path" style="background-color: yellow"></span></p>
+			<p>searchObject : <span ng-bind="searchObject" style="background-color: yellow"></span></p>
+			<p>hash : <span ng-bind="hash" style="background-color: yellow"></span></p>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+		<script src="script/myScript.js"></script>
+	</body>
+</html>
+<!--
+The $location service parses the URL in the browser address bar (based on the window.location) and makes the URL available to your application. Changes to the URL in the address bar are reflected into $location service and changes to $location are reflected into the browser address bar. -->
+<!--
+It parses the URL in the browser address bar and makes the URL available to your application. Changes to the URL in the address bar are reflected into $location service and changes to $location are reflected into the browser address bar. -->
+
+<!-- https://docs.angularjs.org/api/ng/service/$location -->

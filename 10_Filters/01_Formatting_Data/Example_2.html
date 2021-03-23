@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+    <head>
+        <title>Filters | Formatting Data | Example 2</title>
+        <link rel="icon" href="icon/angularjs.jpg">
+    </head>
+    <body>
+        
+        <div>
+            <p><u>Order by Country</u></p>
+            <ul>
+                <li ng-repeat="x in names | orderBy:'country'">
+                    {{ x.name + ', ' + x.country }}
+                </li>
+            </ul>
+        </div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script>
+        
+        var app=angular
+                .module('myApp', [])
+                .controller("myCtrl",function($scope){
+                  $scope.names = [
+                        {name:'Jani',country:'Norway'},
+                        {name:'Carl',country:'Sweden'},
+                        {name:'Margareth',country:'England'},
+                        {name:'Hege',country:'Norway'},
+                        {name:'Joe',country:'Denmark'},
+                        {name:'Gustav',country:'Sweden'},
+                        {name:'Birgit',country:'Denmark'},
+                        {name:'Mary',country:'England'},
+                        {name:'Kai',country:'Norway'}
+                    ];
+                });
+    </script>
+</html>

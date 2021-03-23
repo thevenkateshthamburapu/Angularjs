@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Services | $cacheFactory</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
+	</head>
+	<body>
+		<div>
+			<input ng-model="newCacheKey" placeholder="Key">
+			<input ng-model="newCacheValue" placeholder="Value">
+			<button ng-click="put(newCacheKey, newCacheValue)">Cache</button>
+			<p ng-if="keys.length">Cached Values</p>
+			<div ng-repeat="key in keys">
+				<span ng-bind="key"></span>
+				<span>: </span>
+				<b ng-bind="cache.get(key)"></b>
+			</div>
+			<p>Cache Info</p>
+			<div ng-repeat="(key, value) in cache.info()">
+				<span ng-bind="key"></span>
+				<span>: </span>
+				<b ng-bind="value"></b>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+		<script src="script/myScript.js"></script>
+	</body>
+</html>
+<!--
+Factory that constructs Cache objects and gives access to them. -->
+<!--
+Factory that constructs Cache objects, put and retrieve key-value pairs and give it’s access to other services. -->
+<!-- https://docs.angularjs.org/api/ng/service/$cacheFactory -->

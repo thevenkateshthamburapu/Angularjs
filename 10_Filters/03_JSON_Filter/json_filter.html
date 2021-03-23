@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+    <head>
+        <title>JSON Filter</title>
+        <link rel="icon" href="icon/angularjs.jpg">
+    </head>
+    <body>
+        
+       Customer Data in JSON format:
+       <pre>{{customer | json}}</pre>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script type="text/javascript" src="script/myScript.js"></script>
+</html>
+
+<!-- Filters in angular can do 3 different things
+1. Format data
+2. Sort data
+3. Filter data
+
+Filters can be used with a binding expression or a directive
+
+To apply a filter use pipe (|) character
+
+Syntax : {{ expression | filterName:parameter }} -->

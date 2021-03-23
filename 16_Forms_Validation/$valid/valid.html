@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<title>Form Validation | $valid</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<p><code>$valid</code> The field content is valid</p>
+		<form name="myForm">
+			<input type="text" name="myInput" ng-model="myInput" required>
+		</form>
+		<p>The input state is : {{myForm.myInput.$valid}}</p>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+</html>

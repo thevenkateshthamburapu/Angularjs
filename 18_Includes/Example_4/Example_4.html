@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+	<head>
+		<title>Global Includes | Example 4</title>
+        <link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<style type="text/css">
+        table {
+            border-collapse: collapse;
+            }
+
+        th, td {
+            text-align: left;
+            padding: 5px;
+            border: 1px solid black;
+            }
+        tr:nth-child(even){
+            background-color: #f2f2f2
+        }
+        thead{
+            background-color: #f2f2f2
+        }
+    </style>
+	<body>
+        <br>
+        Select View:<select ng-model="employeeData">
+            <option value="employeeTable.html">Table</option>
+            <option value="employeeList.html">List</option>
+            option
+        </select>
+        <br><br>
+		<div ng-include="employeeData">
+            
+        </div>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+	<script type="text/javascript" src="script/myScript.js"></script>
+</html>

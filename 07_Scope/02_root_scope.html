@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Root Scope</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body ng-app="myApp">
+		<!--
+		All applications have a $rootScope which is the scope created on the HTML element that contains the ng-app directive.
+		The rootScope is available in the entire application.
+		If a variable has the same name in both the current scope and in the rootScope, the application uses the one in the current scope. -->
+		<p>The rootScope's favorite color:</p>
+		<h1>{{color}}</h1>
+		<div ng-controller="myCtrl">
+			<p>The scope of the controller's favorite color:</p>
+			<h1>{{color}}</h1>
+		</div>
+		<p>The rootScope's favorite color is still:</p>
+		<h1>{{color}}</h1>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+		<script>
+			var app = angular.module('myApp', []);
+			app.run(function($rootScope) {
+				$rootScope.color = 'blue';
+			});
+			app.controller('myCtrl', function($scope) {
+				$scope.color = "red";
+			});
+		</script>
+	</body>
+</html>

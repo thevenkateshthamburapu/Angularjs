@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+    <head>
+        <title>Filters Sorting Data</title>
+        <link rel="icon" href="icon/angularjs.jpg">
+    </head>
+    <style type="text/css">
+        table {
+            border-collapse: collapse;
+            }
+
+        th, td {
+            text-align: left;
+            padding: 5px;
+            border: 1px solid black;
+            }
+        tr:nth-child(even){
+            background-color: #f2f2f2
+        }
+        thead{
+            background-color: #f2f2f2
+        }
+    </style>
+    <body>
+        <br>
+        Order by:<select ng-model="sortColumn">
+                    <option value="name">Name ASC</option>
+                    <option value="dateOfBirth">Date of Birth ASC</option>
+                    <option value="gender">Gender ASC</option>
+                    <option value="-salary">Salary DESC</option>
+                 </select>
+
+                 <br>
+                 <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date of Birth</th>
+                    <th>Gender</th>
+                    <th>Salary (Number Filter)</th>
+                    <th>Salary (Currency Filter(Default dollar))</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | orderBy:sortColumn" >
+                    <td> {{ employee.name}} </td>
+                    <td> {{ employee.dateOfBirth | date:"dd/MM/yyyy"}} </td>
+                    <td> {{ employee.gender}} </td>
+                    <td> {{ employee.salary | number:2 }} </td>  <!-- decimal point:2 -->
+                    <td> {{ employee.salary | currency}} </td>
+                </tr>
+            </tbody>
+        </table>
+       
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script type="text/javascript" src="script/myScript.js"></script>
+</html>
+
+<!-- Filters in angular can do 3 different things
+1. Format data
+2. Sort data
+3. Filter data
+
+Filters can be used with a binding expression or a directive
+
+To apply a filter use pipe (|) character
+
+Syntax : {{ expression | filterName:parameter }} -->
+
+<!-- To sort the data in Angular
+1. Use orderBy filter
+    {{ orderBy_expression | orderBy : expression : reverse}}
+    Example : ng-repeat="employee in employees | orderBy:'salary':false"
+2. To sort in ascending order, set reverse to false
+3. To sort in descending order, set reverse to true
+4. You can also use + and - to sort in ascending and descending order respectively
+     Example : ng-repeat="employee in employees | orderBy:'+salary'"
+5. You can specify column name it default in ascending order
+    Example : ng-repeat="employee in employees | orderBy:'salary'" -->
+

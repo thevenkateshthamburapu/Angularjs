@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+    <head>
+        <title>Custom Filter</title>
+        <link rel="icon" href="icon/angularjs.jpg">
+    </head>
+    <style type="text/css">
+        table {
+            border-collapse: collapse;
+            }
+
+        th, td {
+            text-align: left;
+            padding: 5px;
+            border: 1px solid black;
+            }
+        tr:nth-child(even){
+            background-color: #f2f2f2
+        }
+        thead{
+            background-color: #f2f2f2
+        }
+    </style>
+    <body>
+        <br>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | filter:searchText" >
+                    <td> {{ employee.name }} </td>
+                    <td> {{ employee.gender | gender }} </td>
+                    <td> {{ employee.salary | number:2 }} </td>  <!-- decimal point:2 -->
+                </tr>
+            </tbody>
+        </table>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script type="text/javascript" src="script/myScript.js"></script>
+</html>

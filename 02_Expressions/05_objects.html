@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>AngularJS Objects 05</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body ng-app>
+		<div ng-init="person={firstName:'Robin',lastName:'	Montgomery'}">
+			<p>The Name is <u>{{ person.firstName }} {{ person.lastName }}</u></p>
+		</div>
+		<hr>
+		<p>Same example using ng-bind</p>
+		<div ng-init="person={firstName:'Robin',lastName:'	Montgomery'}">
+
+			<p>The Name is <u><span ng-bind="person.firstName"></span><span ng-bind="person.lastName"></span></u></p>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+	</body>
+</html>

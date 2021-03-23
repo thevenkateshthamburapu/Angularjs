@@ -1,0 +1,5 @@
+There are three different ways to include the ng-view directive in your application:
+
+1.  <div ng-view></div> 
+2.  <ng-view></ng-view> 
+3.  <div class="ng-view"></div> 

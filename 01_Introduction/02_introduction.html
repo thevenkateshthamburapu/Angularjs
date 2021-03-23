@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>AngularJS Introduction 02</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<!--
+		As you have already seen, AngularJS directives are HTML attributes with an ng prefix.
+		The ng-init directive initializes AngularJS application variables. -->
+		<div ng-app ng-init="firstName='Alton'">
+			<p>The first name is <span ng-bind="firstName"></span></p>
+		</div>
+		<hr>
+		<!--
+		You can use data-ng-, instead of ng-, if you want to make your page HTML valid. -->
+		<div data-ng-app data-ng-init="lastName='Jensen'">
+			<p>The last name is <span data-ng-bind="lastName"></span></p>
+		</div>
+		<br><br>
+		<p>More Information </p>
+		<a href="https://www.w3schools.com/angular/angular_intro.asp">https://www.w3schools.com/angular/angular_intro.asp</a>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+	</body>
+</html>

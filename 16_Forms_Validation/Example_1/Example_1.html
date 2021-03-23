@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<title>Form Validation | Example 1</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<form name="myForm">
+			<div>
+				Username : <input type="text" ng-model="name" name="username" placeholder="Enter Username" required>
+				<span style="color: red" ng-show="myForm.username.$touched && myForm.username.$invalid">The name is required.</span>
+			</div>
+				<br>
+			<div>
+				Comments : <input type="text" name="comments" ng-model="comments" placeholder="Enter Comments" required>				
+			</div>
+			<input type="submit" value="Add">
+		</form>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+</html>

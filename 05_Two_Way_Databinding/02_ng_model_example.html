@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Two-Way Binding | ng-model | Example</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>First Name</td>
+				<td>
+					<input type="text" placeholder="Firstname"
+					ng-model="emp.name" />
+				</td>
+			</tr>
+			<tr>
+				<td>Place</td>
+				<td>
+					<input type="text" placeholder="Lastname"
+					ng-model="emp.place" />
+				</td>
+			</tr>
+			<tr>
+				<td>Gender</td>
+				<td>
+					<input type="text" placeholder="Gender"
+					ng-model="emp.gender" />
+				</td>
+			</tr>
+		</table>
+		<br />
+		<table>
+			<tr>
+				<td>First Name:</td>
+				<td>{{ emp.name }}</td>
+			</tr>
+			<tr>
+				<td>Place:</td>
+				<td>{{ emp.place }}</td>
+			</tr>
+			<tr>
+				<td>Gender</td>
+				<td>{{ emp.gender }}</td>
+			</tr>
+		</table>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+		<script>
+			var myApp=angular
+				.module('myApp', [])
+				.controller("myCtrl",function($scope){
+					var  employee = {
+                    name: "Tom",
+                    place: "Paris",
+                    gender: "Male"
+        			};
+				$scope.emp=employee;
+			});
+	
+		</script>
+	</body>
+</html>

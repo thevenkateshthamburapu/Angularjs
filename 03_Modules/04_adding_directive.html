@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Adding a Directive</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body ng-app="myApp">
+		<h1>Creating Directive</h1>
+		<p test-directive></p>
+		<!-- 
+			AngularJS has a set of built-in directives which you can use to add functionality to your application. -->
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+		<script>
+			/*A module is created by using the AngularJS function angular.module*/
+			//create module
+							//	module_name,module_dependencies
+			var app = angular.module("myApp", []);
+			/*In addition you can use the module to add your own directives to your applications*/
+			app.directive("testDirective", function() {
+				return {
+					template : "---Custom Directive---"
+				};
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Select | Example 7 (ng-options) Map/Object</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<p>Note that the selected value represents an object.</p>
+		<div>
+			<p>Select a car:</p>
+			<select ng-model="selectedCar" ng-options="y.brand for (x, y) in cars">
+			</select>
+		</div>
+		<div>
+			<br><br><br>
+			<h3>You selected: {{selectedCar.brand}}</h3>
+			<h4>Model: {{selectedCar.model}}</h3>
+			<h3>Color: {{selectedCar.color}}</h3>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+		<script>
+			var app=angular
+					.module('myApp', [])
+					.controller("myCtrl",function($scope){
+							$scope.cars = {
+							        car01 : {brand : "Ford", model : "Mustang", color : "red"},
+							        car02 : {brand : "Fiat", model : "500", color : "white"},
+							        car03 : {brand : "Volvo", model : "XC90", color : "black"}
+							    }
+					});
+		</script>
+	</body>
+</html>
+<!-- The selected value will always be the value in a key-value pair.
+
+The value in a key-value pair can also be an object
+
+The selected value will still be the value in a key-value pair, only this time it is an object -->

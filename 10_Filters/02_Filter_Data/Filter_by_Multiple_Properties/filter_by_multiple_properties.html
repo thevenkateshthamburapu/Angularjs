@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+    <head>
+        <title>Filters by Multiple Properties</title>
+        <link rel="icon" href="icon/angularjs.jpg">
+    </head>
+    <style type="text/css">
+        table {
+            border-collapse: collapse;
+            }
+
+        th, td {
+            text-align: left;
+            padding: 5px;
+            border: 1px solid black;
+            }
+        tr:nth-child(even){
+            background-color: #f2f2f2
+        }
+        thead{
+            background-color: #f2f2f2
+        }
+    </style>
+    <body>
+        <br>
+        <h3><u>Search Name and City</u></h3>   
+        <input type="text" ng-model="searchText.name" placeholder="search Name">
+        <input type="text" ng-model="searchText.city" placeholder="search City">
+        <input type="checkbox" ng-model="exactMatch">Exact Match
+        <br>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | filter:searchText:exactMatch" >
+                    <td> {{ employee.name }} </td>
+                    <td> {{ employee.gender }} </td>
+                    <td> {{ employee.salary | number:2 }} </td>  <!-- decimal point:2 -->
+                    <td> {{ employee.city}} </td>
+                </tr>
+            </tbody>
+        </table>
+
+       <br><br>
+       <h3><u>Search Name and City in Single Search field</u></h3> 
+       <input type="text" ng-model="searchData" placeholder="search name or city">
+       <br><br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | filter:searchData" >
+                    <td> {{ employee.name }} </td>
+                    <td> {{ employee.gender }} </td>
+                    <td> {{ employee.salary | number:2 }} </td>  <!-- decimal point:2 -->
+                    <td> {{ employee.city}} </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script type="text/javascript" src="script/myScript.js"></script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+	<head>
+		<title>NG-SRC Example</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<div>Animal Name : {{ Animal.name }}</div>
+		<div>Speed : {{ Animal.speed }}</div>
+		<div><img ng-src="{{ Animal.flag}}" style="height: 300px;width: 400px;"></div>
+		<!-- if we use src ="{{ Animal.flag}}" we will get 404 error -->
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+	<script>
+		var app=angular
+				.module('myApp', [])
+				.controller("myCtrl",function($scope){
+					var Animal = {
+            			name: 'Cheetahs',
+           				speed: '112kmph',
+            			flag: 'images/Cheetahs.jpg'
+        			};
+				$scope.Animal=Animal;
+			});
+	</script>
+</html>

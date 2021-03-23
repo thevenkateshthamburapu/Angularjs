@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Services | $animateCss</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
+	</head>
+	<body>
+		<div>
+			<p ng-if="onOff">This element will go BOOM</p>
+		</div>
+		<button ng-click="onOff=true;startCss()">Fold In/Start</button>
+		<button ng-click="stopCss()">Stop</button>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+		<script src="script/myScript.js"></script>
+	</body>
+</html>
+<!--
+This is the core version of $animateCss. By default, only when the ngAnimate is included, then the $animateCss service will actually perform animations. -->
+<!--
+By default, only when the ngAnimate is included, then this service will perform animations. -->
+<!-- https://docs.angularjs.org/api/ng/service/$animateCss -->

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<title>Routing | Example 3 | Template</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<!--
+		Template
+		In the previous examples we have used the templateUrl property in the $routeProvider.when method.
+		You can also use the template property, which allows you to write HTML directly in the property value, and not refer to a page. -->
+		<p><a href="#/!">Main</a></p>
+		<a href="#!banana">Banana</a>
+		<a href="#!tomato">Tomato</a>
+		<p>Click on the links to change the content.</p>
+		<p>The HTML shown in the ng-view directive are written in the template property of the $routeProvider.when method.</p>
+		<div ng-view></div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
+		<script src="script/myScript.js"></script>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Tables | Example 2</title>
+	<link rel="icon" href="icon/angularjs.jpg">
+	<style>
+		table, td, th  {
+		  border: 1px solid grey;
+		  border-collapse: collapse;
+		  padding: 5px;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>Sno</th>
+				<th>Name</th>
+				<th>Country</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr  ng-repeat="data in names">
+				<td ng-if="$odd" style="background-color:#f1f1f1">
+			    {{ $index + 1 }}</td>
+			    <td ng-if="$even">
+			    {{ $index + 1 }}</td>
+				<td ng-if="$odd" style="background-color:#f1f1f1">
+			    {{ data.Name }}</td>
+			    <td ng-if="$even">
+			    {{ data.Name }}</td>
+			    <td ng-if="$odd" style="background-color:#f1f1f1">
+			    {{ data.Country }}</td>
+			    <td ng-if="$even">
+			    {{ data.Country }}</td>
+			</tr>
+		</tbody>
+	</table>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+	<script>
+		var app=angular
+				.module('myApp', [])
+				.controller("myCtrl",function($scope,$http){
+					$http.get("https://www.w3schools.com/angular/customers.php")
+    				.then(function (response) {
+    					$scope.names = response.data.records;
+    				});
+			});
+	</script>
+</body>
+</html>

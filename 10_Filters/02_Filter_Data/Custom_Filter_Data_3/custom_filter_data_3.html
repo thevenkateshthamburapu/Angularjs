@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+    <head>
+        <title>Custom Filter (Make Second(even) Character Capital in given Name )</title>
+        <link rel="icon" href="icon/angularjs.jpg">
+    </head>
+    <body>
+        <div>
+            <ul>
+                <li ng-repeat="x in names">
+                    {{x | myFormat}}
+                </li>
+            </ul>
+        </div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script type="text/javascript" src="script/myScript.js"></script>
+</html>

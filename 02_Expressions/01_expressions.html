@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- we can use ng-app whole page -->
+<html>
+	<!-- <html ng-app> -->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>AngularJS Expressions 01</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<!--
+		AngularJS expressions can be written inside double braces: {{ expression }}.
+		AngularJS expressions can also be written inside a directive: ng-bind="expression".
+		AngularJS will resolve the expression, and return the result exactly where the expression is written.
+		AngularJS expressions are much like JavaScript expressions: They can contain literals, operators, and variables.
+		Example {{ 5 + 5 }} or {{ firstName + " " + lastName }} -->
+		
+		<!-- we use ng-app in particular section -->
+		<div ng-app>
+			50+50={{50+50}}
+		</div>
+		<hr>
+		<!--
+		If you remove the ng-app directive, HTML will display the expression as it is, without solving it:  -->
+		<div>
+			<p>Without the ng-app directive, HTML will display the expression as it is, without solving it.</p>
+			60+40={{60+40}}
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+	</body>
+</html>
+<!-- we can declare ng-app in any level -->

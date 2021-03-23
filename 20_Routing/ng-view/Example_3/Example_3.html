@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<title>Routing | ng-view |Example 3</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<p><a href="#/!">Main</a></p>
+		<a href="#!red">Red</a>
+		<a href="#!green">Green</a>
+		<a href="#!blue">Blue</a>
+		<!-- Applications can only have one ng-view directive, and this will be the placeholder for all views provided by the route. -->
+		<div class="ng-view"></div>
+		<p>Click on the links to navigate to "red.html", "green.html", "blue.html", or back to "main.html"</p>
+		<p>This example uses the ng-view directive as a class attribute to a DIV element.
+		<code>&lt;div class="ng-view"&gt;&lt;/div&gt;</code>
+		</p>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
+		<script src="script/myScript.js"></script>
+	</body>
+</html>

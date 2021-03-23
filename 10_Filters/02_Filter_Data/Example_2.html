@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+    <head>
+        <title>Filters | Filter Data | Example 2</title>
+        <link rel="icon" href="icon/angularjs.jpg">
+    </head>
+    <body>
+        <p>This example displays only the names containing the letter "i".</p>
+        <div>
+            <ul>
+                <li ng-repeat="x in names | filter : 'i'">
+                    {{ x }}
+                </li>
+            </ul>
+        </div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script>
+    
+    var app=angular
+    .module('myApp', [])
+    .controller("myCtrl",function($scope){
+         $scope.names = [
+                'Jani',
+                'Carl',
+                'Margareth',
+                'Hege',
+                'Joe',
+                'Gustav',
+                'Birgit',
+                'Mary',
+                'Kai'
+            ];
+    });
+    </script>
+</html>

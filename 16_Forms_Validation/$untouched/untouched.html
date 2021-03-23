@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<title>Form Validation | $untouched</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<p><code>$untouched</code> The field has not been touched yet</p>
+		<form name="myForm">
+			<input type="text" name="myInput" ng-model="myInput">
+		</form>
+		<p>The input state is : {{myForm.myInput.$untouched}}</p>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+</html>

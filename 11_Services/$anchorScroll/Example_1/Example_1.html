@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Services | $anchorScroll | Example 1</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
+	</head>
+	<body>
+		<div class="fixed-header">
+			<a href="" ng-click="gotoAnchor(x)" ng-repeat="x in [1,2,3,4,5]">
+				Go to anchor {{x}}
+			</a>
+		</div>
+		<div id="anchor{{x}}" class="anchor" ng-repeat="x in [1,2,3,4,5]">
+			Anchor {{x}} of 5
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+		<script src="script/myScript.js"></script>
+	</body>
+</html>
+<!--
+When called, it scrolls to the element related to the specified hash or (if omitted) to the current value of $location.hash(), according to the rules specified in the HTML5 spec. -->
+
+<!-- 
+Provides capability to scroll to page anchor specified in $location.hash() -->
+
+<!-- https://docs.angularjs.org/api/ng/service/$anchorScroll -->

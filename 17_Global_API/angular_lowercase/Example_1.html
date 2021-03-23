@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+	<head>
+		<title>Global API | angular.lowercase() Above 1.7.* Version</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+	</head>
+	<body>
+		<div>
+			<p>Original Text : {{ data1 }}</p>
+			<p>angular.lowercase(): {{ data2 }}</p>
+		</div>
+	</body>
+	<script>
+		var app=angular
+				.module('myApp', [])
+				.controller("myCtrl",function($scope){
+					$scope.data1 = "GEETHA";
+					$scope.data2 = angular.$$lowercase($scope.data1);
+/*Angular 1.7.* still has lowercase function but it's renamed to $$lowercase.*/ 
+				});
+	</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>AngularJS Scope</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<!--
+		The scope is the binding part between the HTML (view) and the JavaScript (controller).
+		The scope is an object with the available properties and methods.
+		The scope is available for both the view and the controller. -->
+		<!--
+		When you make a controller in AngularJS, you pass the $scope object as an argument -->
+		<div ng-app="myApp" ng-controller="myCtrl">
+			<h1>{{carname}}</h1>
+		</div>
+		<!--
+		When adding properties to the $scope object in the controller, the view (HTML) gets access to these properties.
+		In the view, you do not use the prefix $scope, you just refer to a property name, like {{carname}}. -->
+		
+		<!-- 
+		If we consider an AngularJS application to consist of:
+		View, which is the HTML.
+		Model, which is the data available for the current view.
+		Controller, which is the JavaScript function that makes/changes/removes/controls the data.
+		Then the scope is the Model.
+		The scope is a JavaScript object with properties and methods, which are available for both the view and the controller. -->
+		<!-- 
+		It is important to know which scope you are dealing with, at any time. -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+		<script>
+			var app = angular.module('myApp', []);
+			app.controller('myCtrl', function($scope) {
+				$scope.carname = "Volvo";
+			});
+		</script>
+	</body>
+</html>

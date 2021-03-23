@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Select | Example 5 (ng-options) Map/Object</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<p>This example demonstrates the use of an object as the data source when creating a dropdown list.</p>
+		<div>
+			<p>Select a car:</p>
+			<select ng-model="selectedCar" ng-options="x for (x, y) in cars">
+			</select>
+		</div>
+		<div>
+			<br><br><br>
+			<h3>You selected: {{selectedCar}}</h3>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+		<script>
+			var app=angular
+					.module('myApp', [])
+					.controller("myCtrl",function($scope){
+							$scope.cars = {
+							car01 : "Ford",
+							car02 : "Fiat",
+							car03 : "Volvo"
+							}
+					});
+		</script>
+	</body>
+</html>

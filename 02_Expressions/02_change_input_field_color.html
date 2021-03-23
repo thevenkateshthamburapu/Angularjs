@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Change Input Filed Backgorund Color 02</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<!-- 
+		You can write expressions wherever you like, AngularJS will simply resolve the expression and return the result.
+		Example: Let AngularJS change the value of CSS properties -->
+		<p>Change the value of the input field:</p>
+		<div ng-app ng-init="myCol='lightblue'">
+			<input style="background-color:{{myCol}}" ng-model="myCol">
+		</div>
+		<p>AngularJS resolves the expression and returns the result.</p>
+		<p>The background color of the input box will be whatever you write in the input field.</p>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+	</body>
+</html>

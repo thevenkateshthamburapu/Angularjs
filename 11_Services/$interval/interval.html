@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Services | $interval</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<div>
+			<!-- <label>Date format: <input ng-model="format"></label> <hr/> -->
+			Current time is: <span my-current-time="format"></span>
+			<hr/>
+			Blood 1 : <font color='red'>{{blood_1}}</font>
+			Blood 2 : <font color='red'>{{blood_2}}</font>
+			<button type="button" data-ng-click="fight()">Fight</button>
+			<button type="button" data-ng-click="stopFight()">StopFight</button>
+			<button type="button" data-ng-click="resetFight()">resetFight</button>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+		<script src="script/myScript.js"></script>
+	</body>
+</html>
+<!--
+AngularJS's wrapper for window.setInterval. The fn function is executed every delay milliseconds. -->
+<!--
+Angular’s wrapper for window.setInterval. -->
+<!-- https://docs.angularjs.org/api/ng/service/$interval -->

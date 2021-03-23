@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>AngularJS Numbers 03</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body ng-app>
+		<div ng-init="quantity=10;cost=5">
+			<p>Total in Rupees(&#8377;): {{ quantity * cost }}</p>
+		</div>
+		<hr>
+		<p>Same example using ng-bind</p>
+		<div ng-init="items=20;cost=5">
+			<p>Total in Rupees(&#8377;): <span ng-bind="items * cost"></span></p>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+	</body>
+</html>

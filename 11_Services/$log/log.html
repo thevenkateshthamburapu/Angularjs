@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Services | $log</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<div>
+			<p>Reload this page with open console, enter text and hit the log button...</p>
+			<label>Message:
+				<input type="text" ng-model="message" /></label>
+				<button ng-click="$log.log(message)">log</button>
+				<button ng-click="$log.warn(message)">warn</button>
+				<button ng-click="$log.info(message)">info</button>
+				<button ng-click="$log.error(message)">error</button>
+				<button ng-click="$log.debug(message)">debug</button>
+			</div>
+			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+			<script src="script/myScript.js"></script>
+		</body>
+	</html>
+	<!--
+	Simple service for logging. Default implementation safely writes the message into the browser's console (if present). -->
+	<!--
+	Console logger. -->
+	<!-- https://docs.angularjs.org/api/ng/service/$log -->

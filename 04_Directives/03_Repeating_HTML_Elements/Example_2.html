@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>AngularJS Directives Example | ng-repeat</title>
+		<link rel="icon" href="icon/angularjs.jpg">
+	</head>
+	<body>
+		<div ng-app ng-init="names=[
+			{name:'Jani',country:'Norway'},
+			{name:'Hege',country:'Sweden'},
+			{name:'Kai',country:'Denmark'}]">
+			<p>Looping with objects:</p>
+			<ul>
+				<li ng-repeat="x in names">
+				{{' Name : '+x.name + ', Contry : ' + x.country }}</li>
+			</ul>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+	</body>
+</html>
